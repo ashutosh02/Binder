@@ -6,6 +6,7 @@ import SideBar from "../common/sidebar";
 
 import EditProfile from "./EditProfile/EditProfile"
 import Path from "./Paths/path"
+import Spaces from "./Spaces/spaces"
 import People from "./People/people"
 import FolllowRequest from "./People/FollowRequests/followRequests"
 
@@ -46,6 +47,7 @@ export default function Myprofile(props) {
         <Router>
           <Route exact path="/myProfile/editProfile" component={EditProfile} />
           <Route exact path="/myProfile/myPath" component={Path} />
+          <Route exact path="/myProfile/spaces" component={Spaces} />
           <Route exact path="/myProfile/people" component={People} />
           <Route exact path="/myProfile/people/request" component={FolllowRequest} />
 

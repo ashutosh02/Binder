@@ -36,6 +36,7 @@ function App() {
         <Route exact path="/myProfile" component={Myprofile} />
         <Route exact path="/myProfile/editProfile" component={Myprofile} />
         <Route exact path="/myProfile/myPath" component={Myprofile} />
+        <Route exact path="/myProfile/spaces" component={Myprofile} />
         <Route exact path="/myProfile/people" component={Myprofile} />
         <Route exact path="/myProfile/people/request" component={Myprofile} />
 
