@@ -12,6 +12,8 @@ import HomeScreen from './components/Home/homescreen';
 import Shell from "./components/common/shell";
 
 import Myprofile from "./components/Myprofile/Myprofile";
+import Participants from "./components/Connect/participants";
+import MessageConnect from "./components/Connect/messageConnect"
 
 function App() {
   return (
@@ -25,6 +27,9 @@ function App() {
         <Route exact path="/checkemail" component={Checkemail} />
         <Route exact path="/homescreen" component={HomeScreen} />
         <Route exact path="/confirmpasswordchange" component={Passwordchangeconfirm} />
+        <Route exact path="/connect/allparticipants" component={Participants} />
+        <Route exact path="/connect/messages" component={MessageConnect} />
+        <Route exact path="/connect/messages/grpChat" component={MessageConnect} />
         <Route exact path="/home" component={Shell} />
 
         <Route exact path="/profile/settings" component={Shell} />
