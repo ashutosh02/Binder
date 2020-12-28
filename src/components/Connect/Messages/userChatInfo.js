@@ -113,7 +113,7 @@ export default function UserChatInfo() {
                     <ChatList />
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                    <GrpHeadCard title={'Vinay Chaganti'} />
+                    <GrpHeadCard title={'Vinay Chaganti'} type={'userChat'} />
                     <Grid>
                         <ChatLayout />
                     </Grid>

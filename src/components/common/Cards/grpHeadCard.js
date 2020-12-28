@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import { makeStyles, withStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -12,32 +12,25 @@ import IconButton from '@material-ui/core/IconButton';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import Avatar from '@material-ui/core/Avatar';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
-import BlockIcon from '@material-ui/icons/Block';
-import ReportOutlinedIcon from '@material-ui/icons/ReportOutlined';
+
+import ColorizeOutlinedIcon from '@material-ui/icons/ColorizeOutlined';
+import EditOutlinedIcon from '@material-ui/icons/EditOutlined';
+import ExitToAppOutlinedIcon from '@material-ui/icons/ExitToAppOutlined';
+import GroupAddOutlinedIcon from '@material-ui/icons/GroupAddOutlined';
 import PersonAddDisabledOutlinedIcon from '@material-ui/icons/PersonAddDisabledOutlined';
-import AccountCircleOutlinedIcon from '@material-ui/icons/AccountCircleOutlined';
-import ShareOutlinedIcon from '@material-ui/icons/ShareOutlined';
+import VolumeMuteOutlinedIcon from '@material-ui/icons/VolumeMuteOutlined';
+import CameraAltOutlinedIcon from '@material-ui/icons/CameraAltOutlined';
+import DeleteForeverOutlinedIcon from '@material-ui/icons/DeleteForeverOutlined';
+import ReportOutlinedIcon from '@material-ui/icons/ReportOutlined';
+import BlockOutlinedIcon from '@material-ui/icons/BlockOutlined';
+
+
 import Popover from '@material-ui/core/Popover';
 import PhoneOutlinedIcon from '@material-ui/icons/PhoneOutlined';
 import VideoCallOutlinedIcon from '@material-ui/icons/VideoCallOutlined';
 import CloseIcon from '@material-ui/icons/Close';
 import InfoIcon from '@material-ui/icons/Info';
 
-
-
-import {
-    faBookmark,
-    faCertificate,
-    faCog,
-    faLayerGroup,
-    faNewspaper,
-    faPaperPlane,
-    faUserCircle,
-    faUsers,
-    faVideo,
-} from "@fortawesome/free-solid-svg-icons";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -99,7 +92,7 @@ export default function GrpHeadCard(props) {
                             <Grid item xs={12}>
                                 <Typography variant="body2" className={classes.cardTtitle} component="p">
                                     {props.title}
-                                 </Typography>
+                                </Typography>
                             </Grid>
 
                         </Grid>
@@ -137,36 +130,79 @@ export default function GrpHeadCard(props) {
                         }}
                     >
                         <List component="nav"  >
-                            <ListItem button component={Link} to="/connect/messages/grpChatInfo">
-                                <ListItemIcon>
-                                    <ShareOutlinedIcon />
-                                </ListItemIcon>
-                                <ListItemText primary="Share Profile" />
-                            </ListItem>
-                            <ListItem button component={Link} to="/connect/messages/grpChatVoice">
-                                <ListItemIcon>
-                                    <AccountCircleOutlinedIcon />
-                                </ListItemIcon>
-                                <ListItemText primary="View Profile" />
-                            </ListItem>
-                            <ListItem button component={Link} to="/connect/messages/grpChatVideo">
-                                <ListItemIcon>
-                                    <PersonAddDisabledOutlinedIcon />
-                                </ListItemIcon>
-                                <ListItemText primary="Disconnect" />
-                            </ListItem>
-                            <ListItem button>
-                                <ListItemIcon>
-                                    <ReportOutlinedIcon />
-                                </ListItemIcon>
-                                <ListItemText primary="Report" />
-                            </ListItem>
-                            <ListItem button>
-                                <ListItemIcon>
-                                    <BlockIcon />
-                                </ListItemIcon>
-                                <ListItemText primary="Block" />
-                            </ListItem>
+                            {props.type === 'grpChat' ?
+                                <>
+                                    {!props.subType &&
+                                        <ListItem button component={Link} to="/connect/messages/grpChatInfo">
+                                            <ListItemIcon>
+                                                <ColorizeOutlinedIcon />
+                                            </ListItemIcon>
+                                            <ListItemText primary="Pin to Top" />
+                                        </ListItem>
+                                    }
+                                    <ListItem button component={Link} to="/connect/messages/grpChatVoice">
+                                        <ListItemIcon>
+                                            <EditOutlinedIcon />
+                                        </ListItemIcon>
+                                        <ListItemText primary="Rename" />
+                                    </ListItem>
+                                    <ListItem button component={Link} to="/connect/messages/grpChatVideo">
+                                        <ListItemIcon>
+                                            <ExitToAppOutlinedIcon />
+                                        </ListItemIcon>
+                                        <ListItemText primary="Leave" />
+                                    </ListItem>
+                                    <ListItem button component={Link} to="/connect/messages/grpChatConnect">
+                                        <ListItemIcon>
+                                            <GroupAddOutlinedIcon />
+                                        </ListItemIcon>
+                                        <ListItemText primary="Add Participant" />
+                                    </ListItem>
+                                    <ListItem button>
+                                        <ListItemIcon>
+                                            <PersonAddDisabledOutlinedIcon />
+                                        </ListItemIcon>
+                                        <ListItemText primary="Remove Participant" />
+                                    </ListItem>
+                                    <ListItem button>
+                                        <ListItemIcon>
+                                            <VolumeMuteOutlinedIcon />
+                                        </ListItemIcon>
+                                        <ListItemText primary="Mute Group" />
+                                    </ListItem>
+                                    <ListItem button>
+                                        <ListItemIcon>
+                                            <CameraAltOutlinedIcon />
+                                        </ListItemIcon>
+                                        <ListItemText primary="Change Image" />
+                                    </ListItem> </> :
+
+                                <>
+                                    <ListItem button>
+                                        <ListItemIcon>
+                                            <ReportOutlinedIcon />
+                                        </ListItemIcon>
+                                        <ListItemText primary="Report" />
+                                    </ListItem>
+                                    <ListItem button>
+                                        <ListItemIcon>
+                                            <BlockOutlinedIcon />
+                                        </ListItemIcon>
+                                        <ListItemText primary="Block" />
+                                    </ListItem>
+                                    <ListItem button>
+                                        <ListItemIcon>
+                                            <VolumeMuteOutlinedIcon />
+                                        </ListItemIcon>
+                                        <ListItemText primary="Mute Group" />
+                                    </ListItem>
+                                    <ListItem button>
+                                        <ListItemIcon>
+                                            <DeleteForeverOutlinedIcon />
+                                        </ListItemIcon>
+                                        <ListItemText primary="Delete Chat" />
+                                    </ListItem>
+                                </>}
                         </List>
                     </Popover>
 

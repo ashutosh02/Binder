@@ -95,7 +95,7 @@ export default function GrpChatVideocall() {
                     <ChatList />
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                <GrpHeadCard title='Design Group' />
+                <GrpHeadCard title='Design Group' type={'grpChat'}/>
                     <Grid>
                         <ChatLayout />
                     </Grid>

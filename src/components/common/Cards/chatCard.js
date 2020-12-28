@@ -12,11 +12,17 @@ import IconButton from '@material-ui/core/IconButton';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import Avatar from '@material-ui/core/Avatar';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
-import BlockIcon from '@material-ui/icons/Block';
+
+
+import VisibilityOutlinedIcon from '@material-ui/icons/VisibilityOutlined';
+import VisibilityOffOutlinedIcon from '@material-ui/icons/VisibilityOffOutlined';
+import VolumeMuteOutlinedIcon from '@material-ui/icons/VolumeMuteOutlined';
+import ColorizeOutlinedIcon from '@material-ui/icons/ColorizeOutlined';
+import DeleteForeverOutlinedIcon from '@material-ui/icons/DeleteForeverOutlined';
 import ReportOutlinedIcon from '@material-ui/icons/ReportOutlined';
-import PersonAddDisabledOutlinedIcon from '@material-ui/icons/PersonAddDisabledOutlined';
-import AccountCircleOutlinedIcon from '@material-ui/icons/AccountCircleOutlined';
-import ShareOutlinedIcon from '@material-ui/icons/ShareOutlined';
+import BlockOutlinedIcon from '@material-ui/icons/BlockOutlined';
+
+
 import Popover from '@material-ui/core/Popover';
 import Badge from '@material-ui/core/Badge';
 import Chip from '@material-ui/core/Chip';
@@ -162,21 +168,33 @@ export default function ChatCard() {
                         <List component="nav"  >
                             <ListItem button>
                                 <ListItemIcon>
-                                    <ShareOutlinedIcon />
+                                    <VisibilityOutlinedIcon />
                                 </ListItemIcon>
-                                <ListItemText primary="Share Profile" />
+                                <ListItemText primary="Mark as read" />
                             </ListItem>
                             <ListItem button component={Link} to="/connect/messages/userChat">
                                 <ListItemIcon>
-                                    <AccountCircleOutlinedIcon />
+                                    <VisibilityOffOutlinedIcon />
                                 </ListItemIcon>
-                                <ListItemText primary="View Profile" />
+                                <ListItemText primary="Mark as unread" />
                             </ListItem>
                             <ListItem button>
                                 <ListItemIcon>
-                                    <PersonAddDisabledOutlinedIcon />
+                                    <VolumeMuteOutlinedIcon />
                                 </ListItemIcon>
-                                <ListItemText primary="Disconnect" />
+                                <ListItemText primary="Mute" />
+                            </ListItem>
+                            <ListItem button>
+                                <ListItemIcon>
+                                    <ColorizeOutlinedIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Pin to Top" />
+                            </ListItem>
+                            <ListItem button>
+                                <ListItemIcon>
+                                    <DeleteForeverOutlinedIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Delete Chat" />
                             </ListItem>
                             <ListItem button>
                                 <ListItemIcon>
@@ -186,7 +204,7 @@ export default function ChatCard() {
                             </ListItem>
                             <ListItem button>
                                 <ListItemIcon>
-                                    <BlockIcon />
+                                    <BlockOutlinedIcon />
                                 </ListItemIcon>
                                 <ListItemText primary="Block" />
                             </ListItem>

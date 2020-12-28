@@ -73,7 +73,7 @@ const useStyles = makeStyles(theme => ({
 
 }));
 
-const ChatLayout = () => {
+const ChatLayout = (props) => {
     const classes = useStyles();
     const dummyData = [
         {
@@ -100,7 +100,6 @@ const ChatLayout = () => {
             message: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr,Lorem ipsum dolor sit amet, consetetur sadipscing elitr,",
             direction: "right"
         },
-       
     ];
 
     const chatBubbles = dummyData.map((obj, i = 0) => (

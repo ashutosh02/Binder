@@ -6,6 +6,7 @@ import SideBar from "../common/sidebar";
 
 import Messages from "../Connect/Messages/messages"
 import GrpChat from "../Connect/Messages/grpChat"
+import GrpChatConnect from "../Connect/Messages/grpChatConnect"
 import GrpChatInfo from "../Connect/Messages/grpChatInfo"
 import GrpChatVoice from "../Connect/Messages/grpChatVoicecall"
 import GrpChatVideo from "../Connect/Messages/grpChatVideocall"
@@ -53,6 +54,7 @@ export default function MessageConnect(props) {
           <Route exact path="/connect/messages/grpChatVoice" component={GrpChatVoice} />
           <Route exact path="/connect/messages/grpChatVideo" component={GrpChatVideo} />
           <Route exact path="/connect/messages/userChat" component={UserChatInfo} />
+          <Route exact path="/connect/messages/grpChatConnect" component={GrpChatConnect} />
 
         </Router>
       </main>

@@ -68,7 +68,7 @@ export default function GrpChat() {
                 <Grid item xs={12} sm={9}
 
                 >
-                    <GrpHeadCard title='Design Group' type={'grpChat'}/>
+                    <GrpHeadCard title='Design Group' type={'grpChat'} subType={'grpChatConnect'}/>
                     <Grid>
                         <ChatLayout />
                     </Grid>
